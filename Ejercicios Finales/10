@@ -1,0 +1,131 @@
+Pattern: Tree Breadth First Search
+Es un algoritmo para atravesar o buscar estructuras de datos de árbol o gráfico . Comienza en la raíz del árbol (o algún nodo arbitrario de un gráfico, a veces denominado "clave de búsqueda" , y explora todos los nodos vecinos en la profundidad actual antes de pasar a los nodos en el siguiente nivel de profundidad
+Utiliza la estrategia opuesta como búsqueda de profundidad , que en su lugar explora la rama del nodo lo más lejos posible antes de verse obligado a retroceder y expandir otros nodos. 
+BFS y su aplicación para encontrar componentes conectados de gráficos fueron inventados en 1945 por Konrad Zuse , en su (rechazado) Ph.D. tesis sobre el lenguaje de programación Plankalkül , pero esto no se publicó hasta 1972. Fue reinventado en 1959 por Edward F. Moore , quien lo utilizó para encontrar el camino más corto fuera de un laberinto, y más tarde desarrollado por CY Lee en un algoritmo de enrutamiento de cables (publicado en 1961). 
+Pattern: Tree Depth First Search
+Es un algoritmo para atravesar o buscar estructuras de datos de árbol o gráfico . El algoritmo comienza en el nodo raíz (seleccionando algún nodo arbitrario como nodo raíz en el caso de un gráfico) y explora lo más posible a lo largo de cada rama antes de retroceder .
+Una versión de búsqueda de profundidad fue investigada en el siglo XIX por el matemático francés Charles Pierre Trémaux  como una estrategia para resolver laberintos .
+Pattern: Two Heaps
+Es una estructura de datos de montón que toma la forma de un árbol binario . Los montones binarios son una forma común de implementar colas prioritarias . 162–163 El montón binario fue introducido por JWJ Williams en 1964, como una estructura de datos para el montón .
+Pattern: Subsets
+El número total de subconjuntos de cualquier conjunto dado es igual a 2 ^ (número de elementos en el conjunto). Si notamos cuidadosamente que no son más que números binarios del 0 al 15.
+Pattern: Modified Binary Search
+la búsqueda binaria puede volverse compleja cuando se produce la duplicación de elementos en la lista ordenada de valores. No siempre buscamos "contiene o no" mediante la búsqueda binaria, pero hay 5 variantes como las siguientes:
+1) Contiene (Verdadero o Falso)
+2) Índice de primera aparición de una clave
+3) Índice de última aparición de una clave
+4) Índice de menor elemento mayor que clave
+5) Índice de mayor elemento menor que clave
+
+Patrón: ventana deslizante(Pattern: sliding window)
+La Ventana deslizante es un mecanismo dirigido al control de flujo de datos que existe entre un emisor y un receptor pertenecientes a una red informática.
+El Protocolo de Ventana Deslizante es un protocolo de transmisión de datos bidireccional de la capa del nivel de enlace (modelo OSI).
+La ventana deslizante es un dispositivo de control de flujo de tipo software, es decir, el control del flujo se lleva a cabo mediante el intercambio específico de caracteres o tramas de control, con los que el receptor indica al emisor cuál es su estado de disponibilidad para recibir datos.
+Este dispositivo es necesario para no inundar al receptor con envíos de tramas de datos. El receptor al recibir datos debe procesarlo, si no lo realiza a la misma velocidad que el transmisor los envía se verá saturado de datos, y parte de ellos se pueden perder. Para evitar tal situación la ventana deslizante controla este ritmo de envíos del emisor al receptor.
+Con este dispositivo se resuelven dos grandes problemas: el control de flujo de datos y la eficiencia en la transmisión.
+// Brute Force Solution
+function findMaxSubarraySum(nums, k) {
+  let maxSum = -Infinity;
+
+  if (nums.length < k) {
+    return null;
+  }
+
+  for (let i = 0; i< nums.length - k + 1; i++) {
+    let tempSum = 0;
+    for (let j = i; j < i + k; j++){
+      tempSum += nums[j];
+      
+    }
+    maxSum = Math.max(maxSum, tempSum);
+  }
+  return maxSum;
+}
+
+
+Pattern: Two Pointers
+Dos punteros es realmente una técnica fácil y efectiva que generalmente se usa para buscar pares en una matriz ordenada.
+Dada una matriz ordenada A (ordenada en orden ascendente), con N enteros, encuentre si existe algún par de elementos (A [i], A [j]) de modo que su suma sea igual a X.
+// Two pointer technique based solution to find 
+// if there is a pair in A[0..N-1] with a given sum. 
+bool isPairSum(A[], N, X) 
+{ 
+    // represents first pointer 
+    int i = 0; 
+  
+    // represents second pointer 
+    int j = N - 1; 
+  
+    while (i < j) { 
+  
+        // If we find a pair 
+        if (A[i] + A[j] == X) 
+            return true; 
+  
+        // If sum of elements at current 
+        // pointers is less, we move towards 
+        // higher values by doing i++ 
+        else if (A[i] + A[j] < X) 
+            i++; 
+  
+        // If sum of elements at current 
+        // pointers is more, we move towards 
+        // lower values by doing j-- 
+        else
+            j--; 
+    } 
+    return false; 
+} 
+ Pattern: Fast & Slow pointers
+Puntero lento y puntero rápido son simplemente los nombres dados a dos variables de puntero. La única diferencia es que, el puntero lento recorre la lista vinculada un nodo a la vez, mientras que un puntero rápido recorre la lista vinculada dos nodos a la vez.
+A continuación se muestra un fragmento de código básico para mover punteros lentos y rápidos.
+
+Input: head = [3, 2, 0, -4], pos = 1
+Output: true
+Explanation: There is a cycle in the linked list, where tail connects to 
+the second node.
+Pattern: Merge Intervals
+
+En la serie de Patrones de codificación , intentaremos reconocer patrones comunes subyacentes detrás de cada pregunta de algoritmo, utilizando ejemplos reales de Leetcode .
+Input: [[1, 3], [2, 6], [8, 10], [15, 18]]
+Output: [[1, 6], [8, 10], [15, 18]]
+Explanation: Since intervals [1, 3] and [2, 6] overlaps, merge them into [1, 6]
+Pattern: Cyclic Sort
+La clasificación de ciclos es un algoritmo de clasificación en el lugar , un algoritmo de clasificación inestable , una clasificación de comparación que es teóricamente óptima en términos del número total de escrituras en la matriz original.
+•	Es óptimo en términos de número de escrituras de memoria. Se minimiza el número de escrituras en memoria de tipo (Cada valor está bien escrito cero veces, si ya está en su posición correcta, o se escribe una sola vez a su posición correcta.)
+•	Se basa en la idea de que la matriz a clasificar se puede dividir en ciclos. Los ciclos se pueden visualizar como un gráfico. Tenemos n nodos y un borde dirigido del nodo i al nodo j si el elemento en el i-ésimo índice debe estar presente en el índice j-ésimo en la matriz ordenada.
+Ciclo en arr [] = {2, 4, 5, 1, 3}
+
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        start = 0
+
+        while start < len(nums):
+            num = nums[start]
+            if num < len(nums) and num != start:
+                nums[start], nums[num] = nums[num], nums[start]
+            else:
+                start += 1
+
+        for i in range(len(nums)):
+            if nums[i] != i:
+                return i
+
+        return len(nums)
+Pattern: In-place Reversal of a Linked List
+Vamos a invertir el nodo actual apuntándolo a la anterior antes de pasar al siguiente nodo. Además, actualizaremos el anterior para que siempre apunte al nodo anterior que hemos procesado. Complejidad de tiempo: O (N) donde N es el número de nodos en las Listas vinculadas
+Entrada : Jefe de la siguiente lista vinculada
+1-> 2-> 3-> 4-> NULL
+Salida : La lista vinculada debe cambiarse a,
+4-> 3-> 2-> 1-> NULL
+Entrada : Cabecera de la siguiente lista vinculada
+1-> 2-> 3-> 4-> 5-> NULL
+Salida : la lista vinculada debe cambiarse a,
+5-> 4-> 3-> 2-> 1-> NULL
+Entrada : NULL
+Salida : NULL
+Entrada : 1-> NULL
+Salida : 1-> NULL
+
+
+
